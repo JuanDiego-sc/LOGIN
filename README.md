@@ -66,6 +66,9 @@ contraseña (VARCHAR)
 
 rol (VARCHAR)
 
+![image](https://github.com/user-attachments/assets/237cfd98-c510-4edd-bc7b-b351d63edc49)
+
+
 📌 Por Hacer
  Sistema de login (autenticación)
 
