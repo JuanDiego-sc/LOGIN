@@ -74,7 +74,5 @@ rol (VARCHAR)
  Gestión avanzada de roles
 
 🤝 Créditos
-Este proyecto fue desarrollado por Juan Diego Silva como una práctica de desarrollo Full Stack.
+Este proyecto fue desarrollado por Juan Diego Silva como una práctica de desarrollo para la tarea de MVC
 
-💬 Comentarios
-Si tienes sugerencias, mejoras o encontraste un bug, ¡no dudes en abrir un issue!
