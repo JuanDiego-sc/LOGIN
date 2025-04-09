@@ -17,6 +17,12 @@ app.MapControllers();
 
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
+
+app.UseCors(x => x
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .WithOrigins("http://localhost:3001", "https://localhost:3001"));
+
 try
 {
     var context = services.GetRequiredService<AppDbContext>();
