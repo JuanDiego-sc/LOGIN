@@ -32,7 +32,7 @@ Yarn
 bash
 Copiar
 Editar
-git clone https://github.com/tuusuario/nombre-del-repo.git
+git clone https://github.com/JuanDiego-sc/CRUD.git
 cd nombre-del-repo
 2. Backend (.NET 9)
 Asegúrate de tener instalado el SDK de .NET 9 y PostgreSQL.
