@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEdit, faTrash} from '@fortawesome/free-solid-svg-icons';
 import {Modal, ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
 import { User } from './models/User';
-import './App.css'
+import './css/App.css';
 
 const url = 'https://localhost:5002/api/user/';
 
