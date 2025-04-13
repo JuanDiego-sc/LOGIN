@@ -1,3 +1,6 @@
+# LOGIN
+Tarea: Implementación LOGIN con MVC
+
 📋 CRUD - Aplicación Full Stack con .NET 9 y React
 CRUD es una aplicación web sencilla que implementa las operaciones básicas de Crear, Leer, Actualizar y Eliminar usuarios. Cada usuario tiene los campos: ID, nombre, email, contraseña y rol.
 
