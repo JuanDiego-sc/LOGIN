@@ -6,6 +6,7 @@ import {faEdit, faTrash} from '@fortawesome/free-solid-svg-icons';
 import {Modal, ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
 import { User } from './models/User';
 import './css/App.css';
+import DefaultLayout from './Layout/DefaultLayout';
 
 const url = 'https://localhost:5002/api/user/';
 
@@ -113,7 +114,8 @@ componentDidMount(): void {
   render(){
     const {form} = this.state;
     return (
-      <div className='App'>
+      <DefaultLayout>
+        <div className='App'>
         <br />
           <button className='btn btn-success' onClick={()=>
             {this.setState({
@@ -214,6 +216,8 @@ componentDidMount(): void {
           </ModalFooter>
         </Modal>
       </div>
+      </DefaultLayout>
+      
     );
   }
 }

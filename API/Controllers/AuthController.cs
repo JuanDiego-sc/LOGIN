@@ -13,8 +13,7 @@ public class AuthController(AppDbContext context) : BasiApiController
         public ActionResult<List<User>> Login(string email, string password)
         {
             var user = context.Users.Where(x => x.Email.Equals(email) && x.Password.Equals(password)).ToList();
-
-            if (user == null) return NotFound();
+            if (user == null || user.Count == 0) return NotFound();
             
             return user;
         }

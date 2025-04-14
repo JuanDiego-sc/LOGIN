@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DefaultLayout from "../Layout/DefaultLayout";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../auth/authProvider";
@@ -6,33 +6,51 @@ import { useAuth } from "../auth/authProvider";
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [redirect, setRedirect] = useState<string | null>(null);
     const auth = useAuth();
 
-    if(auth.isAuthenticated) {
-        return <Navigate to="/dashboard"/>
+    const handleLogin = async (e: React.FormEvent) => {
+        e.preventDefault();
+        await auth.login(email, password);
+    };
+
+    useEffect(() => {
+        if (auth.isAuthenticated) {
+            if (auth.role === "admin") {
+                setRedirect("/adminPannel");
+            } else if (auth.role === "user") {
+                setRedirect("/dashboard");
+            }
+        }
+    }, [auth.isAuthenticated, auth.role]);
+
+    if (redirect) {
+        return <Navigate to={redirect} replace />;
     }
-    
-    return(
+
+    return (
         <DefaultLayout>
-              <form className="form">
+            <form className="form" onSubmit={handleLogin}>
                 <h1>Login</h1>
 
                 <label>Email</label>
-                <input 
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                <input
+                    type="text"
+                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                 ></input>
 
                 <label>Password</label>
-                <input 
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                <input
+                    type="password"
+                    name="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                 ></input>
 
-                <button>Login</button>
+                <button type="submit">Login</button>
             </form>
         </DefaultLayout>
-    )
+    );
 }
