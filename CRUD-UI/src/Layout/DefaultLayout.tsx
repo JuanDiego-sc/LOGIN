@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../auth/authProvider";
-import { Modal } from "reactstrap";
 
 interface DefaultLayoutProps {
     children: React.ReactNode;
